@@ -36,6 +36,17 @@ db.connect((error)=>{
                 console.log("table create")
             }
         })
+        //inseert
+        const VALUES=[['kevinpro','kade'],['we','user'],['we','user']]
+        const insert="INSERT INTO user(username,password)VALUES?";
+        db.query(insert,[VALUES],(err)=>{
+            if(err){
+                console.log("not inserted")
+            }
+            else{
+                console.log("ye data inserted")
+            }
+        })
         
     })
 
