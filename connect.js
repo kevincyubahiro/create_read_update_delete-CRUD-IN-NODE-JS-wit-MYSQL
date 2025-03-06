@@ -47,6 +47,26 @@ db.connect((error)=>{
                 console.log("ye data inserted")
             }
         })
+        //select
+        const select="SELECT * FROM user WHERE username ='we'";
+        db.query(select,(err,result)=>{
+            if(err){
+                console.log("not selected",err.message)
+            }
+            else{
+                console.log("yessssssssss",result.message)
+            }
+        })
+        //delete
+        const delet ="DELETE FROM user WHERE id=1";
+        db.query(delet,(error)=>{
+            if(err){
+                console.log('no')
+            }
+            else(
+            console.log("deleted")
+            )
+        })
         
     })
 
