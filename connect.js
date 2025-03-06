@@ -48,13 +48,13 @@ db.connect((error)=>{
             }
         })
         //select
-        const select="SELECT * FROM user WHERE username ='we'";
+        const select="SELECT * FROM user";
         db.query(select,(err,result)=>{
             if(err){
                 console.log("not selected",err.message)
             }
             else{
-                console.log("yessssssssss",result.message)
+                console.log("yessssssssss",result)
             }
         })
         //delete
