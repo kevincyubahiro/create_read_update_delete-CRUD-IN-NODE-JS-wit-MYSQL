@@ -1,11 +1,10 @@
-import mysql from "mysql2"
+//import the mysql2
 
+import mysql from "mysql2"
 const db=mysql.createConnection({
     host:"localhost",
     user:"root",
     password:"",
-    
-
 });
 db.connect((error)=>{
     if(error){
@@ -15,7 +14,9 @@ db.connect((error)=>{
         console.log(" connected ");
     }
 })
+
 //create database
+
     const sql="CREATE DATABASE l5sod";
     db.query(sql, (result)=>{
         if(result){
@@ -25,7 +26,9 @@ db.connect((error)=>{
             console.log("no created")
         }
     })
+
     // create table 
+
     db.query("use l5sod",(err)=>{
         const sql="CREATE table user(id int auto_increment primary key,username varchar(55),password varchar(200))";
         db.query(sql, (err)=>{
@@ -36,7 +39,9 @@ db.connect((error)=>{
                 console.log("table create")
             }
         })
+
         //inseert
+
         const VALUES=[['kevinpro','kade'],['we','user'],['we','user']]
         const insert="INSERT INTO user(username,password)VALUES?";
         db.query(insert,[VALUES],(err)=>{
@@ -47,7 +52,9 @@ db.connect((error)=>{
                 console.log("ye data inserted")
             }
         })
+
         //select
+
         const select="SELECT * FROM user";
         db.query(select,(err,result)=>{
             if(err){
@@ -57,7 +64,9 @@ db.connect((error)=>{
                 console.log("yessssssssss",result)
             }
         })
+
         //delete
+        
         const delet ="DELETE FROM user WHERE id=1";
         db.query(delet,(error)=>{
             if(err){
@@ -67,6 +76,7 @@ db.connect((error)=>{
             console.log("deleted")
             )
         })
+
         //update
         const updt="UPDATE User set username='yvan' WHERE id < 18"
         db.query(updt,(err)=>{
