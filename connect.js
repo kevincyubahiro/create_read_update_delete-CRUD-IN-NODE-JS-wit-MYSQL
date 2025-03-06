@@ -67,6 +67,16 @@ db.connect((error)=>{
             console.log("deleted")
             )
         })
+        //update
+        const updt="UPDATE User set username='yvan' WHERE id < 18"
+        db.query(updt,(err)=>{
+            if(err){
+                console.log("not updated",err.message)
+            }
+            else{
+                console.log("updated")
+            }
+        })
         
     })
 
